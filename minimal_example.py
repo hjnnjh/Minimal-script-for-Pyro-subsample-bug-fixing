@@ -32,7 +32,7 @@ class MinimalExample:
                             level=logging.INFO)
         self._hyper_params = hyper_params
         self._args = arg_parser.parse_args()
-        self._device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
+        self._device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self._data_dims = self._move_to_device(data_dims)
         self._obs_data = self._move_to_device(obs_data)
         self._obs_data_size = self._move_to_device(obs_data_size)
